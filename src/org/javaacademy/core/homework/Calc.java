@@ -6,6 +6,7 @@ public class Calc {
 
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
+
     //Необходимо написать калькулятор. Алгоритм:
     //1. Вывести на экран: Введите первое число
     //2. Получить число с помощью scanner.nextDouble(), сохранить его в переменную

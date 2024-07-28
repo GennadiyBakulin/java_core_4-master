@@ -1,6 +1,7 @@
 package org.javaacademy.core.homework;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class Homework1 {
 
@@ -21,6 +22,7 @@ public class Homework1 {
   public static void ex2() {
     //Дана строка
     String name = "     ПЕтРов Олег Иванович     ";
+
     //Необходимо
     //1. убрать лишние пробелы,
     //2. перевести текст в верхний регистр
@@ -43,10 +45,13 @@ public class Homework1 {
     //У нас есть машина. В данной машине есть перечень проверок, перед запуском двигателя
     //Количество топлива
     double fuel = 10;
+
     //Работоспособен или нет двигатель
     boolean isEngineWork = true;
+
     //Есть ли ошибки в компьютере (false - ошибок нет)
     boolean hasErrors = false;
+
     //Датчики давления шин
     boolean isWheelWork1 = true;
     boolean isWheelWork2 = true;
@@ -74,8 +79,10 @@ public class Homework1 {
     //получить индекс (число) второй буквы 'o' в строке. ПОЛУЧЕНИЕ ИНДЕКСА ЧЕРЕЗ ФУНКЦИЮ!
     //Распечатать полученный индекс
     String simply = "this is simply. This is my favorite song.";
+
     simply = simply.replaceAll("this is", "those are");
     int index = simply.indexOf('o', simply.indexOf('o') + 1);
+
     System.out.println(index);
   }
 
@@ -150,22 +157,26 @@ public class Homework1 {
     BigDecimal profitAfterTaxes;
 
     //Расчет общего дохода
-    BigDecimal income =
-        priceSausage.multiply(BigDecimal.valueOf(producedSausage)).add(priceHam.multiply(
-            BigDecimal.valueOf(producedHam))).add(priceNeck.multiply(
-            BigDecimal.valueOf(producedNeck)));
+    BigDecimal income = priceSausage
+        .multiply(BigDecimal.valueOf(producedSausage))
+        .add(priceHam.multiply(BigDecimal.valueOf(producedHam)))
+        .add(priceNeck.multiply(BigDecimal.valueOf(producedNeck)));
 
     //Расчет расходов по типу продукции с учетом себестоимости
     expensesHam = BigDecimal.valueOf(275).multiply(BigDecimal.valueOf(producedHam));
-    expensesNeck =
-        (producedNeck < 500 ? BigDecimal.valueOf(311) : BigDecimal.valueOf(299)).multiply(
-            BigDecimal.valueOf(producedNeck));
+    expensesNeck = (producedNeck < 500
+        ? BigDecimal.valueOf(311)
+        : BigDecimal.valueOf(299))
+        .multiply(BigDecimal.valueOf(producedNeck));
     if (producedSausage < 1000) {
-      expensesSausage = BigDecimal.valueOf(412).multiply(BigDecimal.valueOf(producedSausage));
+      expensesSausage = BigDecimal.valueOf(412)
+          .multiply(BigDecimal.valueOf(producedSausage));
     } else if (producedSausage >= 2000) {
-      expensesSausage = BigDecimal.valueOf(404).multiply(BigDecimal.valueOf(producedSausage));
+      expensesSausage = BigDecimal.valueOf(404)
+          .multiply(BigDecimal.valueOf(producedSausage));
     } else {
-      expensesSausage = BigDecimal.valueOf(408).multiply(BigDecimal.valueOf(producedSausage));
+      expensesSausage = BigDecimal.valueOf(408)
+          .multiply(BigDecimal.valueOf(producedSausage));
     }
 
     //Расчет общего расхода
@@ -177,21 +188,26 @@ public class Homework1 {
 
     //Расчет общего налога
     if (profitBeforeTaxes.compareTo(BigDecimal.valueOf(1_000_000)) <= 0) {
-      tax = profitBeforeTaxes.multiply(BigDecimal.valueOf(0.08));
+      tax = profitBeforeTaxes.multiply(BigDecimal.valueOf(0.08))
+          .setScale(2, RoundingMode.HALF_EVEN);
     } else {
-      tax = BigDecimal.valueOf(1_000_000 * 0.08);
+      tax = BigDecimal.valueOf(1_000_000 * 0.08)
+          .setScale(2, RoundingMode.HALF_EVEN);
     }
 
     if (profitBeforeTaxes.compareTo(BigDecimal.valueOf(2_000_000)) <= 0) {
       tax = tax.add(profitBeforeTaxes.subtract(BigDecimal.valueOf(1_000_000))
-          .multiply(BigDecimal.valueOf(0.1)));
+              .multiply(BigDecimal.valueOf(0.1)))
+          .setScale(2, RoundingMode.HALF_EVEN);
     } else {
-      tax = tax.add(BigDecimal.valueOf(1_000_000 * 0.1));
+      tax = tax.add(BigDecimal.valueOf(1_000_000 * 0.1)
+          .setScale(2, RoundingMode.HALF_EVEN));
     }
 
     if (profitBeforeTaxes.compareTo(BigDecimal.valueOf(2_000_000)) > 0) {
       tax = tax.add(profitBeforeTaxes.subtract(BigDecimal.valueOf(2_000_000))
-          .multiply(BigDecimal.valueOf(0.13)));
+              .multiply(BigDecimal.valueOf(0.13)))
+          .setScale(2, RoundingMode.HALF_EVEN);
     }
 
     //Расчет прибыли после налога
