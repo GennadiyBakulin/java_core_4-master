@@ -197,17 +197,14 @@ public class Homework1 {
 
     if (profitBeforeTaxes.compareTo(BigDecimal.valueOf(2_000_000)) <= 0) {
       tax = tax.add(profitBeforeTaxes.subtract(BigDecimal.valueOf(1_000_000))
-              .multiply(BigDecimal.valueOf(0.1)))
-          .setScale(2, RoundingMode.HALF_EVEN);
+          .multiply(BigDecimal.valueOf(0.1)));
     } else {
-      tax = tax.add(BigDecimal.valueOf(1_000_000 * 0.1)
-          .setScale(2, RoundingMode.HALF_EVEN));
+      tax = tax.add(BigDecimal.valueOf(1_000_000 * 0.1));
     }
 
     if (profitBeforeTaxes.compareTo(BigDecimal.valueOf(2_000_000)) > 0) {
       tax = tax.add(profitBeforeTaxes.subtract(BigDecimal.valueOf(2_000_000))
-              .multiply(BigDecimal.valueOf(0.13)))
-          .setScale(2, RoundingMode.HALF_EVEN);
+          .multiply(BigDecimal.valueOf(0.13)));
     }
 
     //Расчет прибыли после налога
