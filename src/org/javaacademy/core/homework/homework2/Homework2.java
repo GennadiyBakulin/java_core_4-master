@@ -62,16 +62,17 @@ public class Homework2 {
     //Дан распределитель случайных чисел
     Random random = new Random(1);
     //Получение случайного числа
-    int number = random.nextInt(1000);
+    // int number = random.nextInt(1000);
 
     //Написать код, генерирующий случайные числа до тех пор, пока не сгенерируется 999.
     //Вывести номер попытки, с которой получилось получить случайным образом число 999.
 
-    int count = 1;
-    while (number != 999) {
-      number = random.nextInt(1000);
+    int count = 0;
+
+    do {
       count++;
-    }
+    } while (random.nextInt(1000) != 999);
+
     System.out.println(count);
   }
 
@@ -111,6 +112,7 @@ public class Homework2 {
         numbers[j] = temp;
       }
     }
+
     System.out.println(Arrays.toString(numbers));
   }
 }
