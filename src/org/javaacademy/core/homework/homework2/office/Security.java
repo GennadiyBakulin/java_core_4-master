@@ -15,4 +15,29 @@ public class Security {
   public String getName() {
     return name;
   }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+
+    Security security = (Security) o;
+    return name.equals(security.name);
+  }
+
+  @Override
+  public int hashCode() {
+    return name.hashCode();
+  }
+
+  @Override
+  public String toString() {
+    return "Security{" +
+        "name='" + name + '\'' +
+        '}';
+  }
 }

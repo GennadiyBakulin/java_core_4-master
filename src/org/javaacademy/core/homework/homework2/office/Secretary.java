@@ -9,4 +9,9 @@ public class Secretary {
     System.out.printf("%s не волнуйтесь, %s все успеет. %s - подождите!\n",
         boss.getName(), manager.getName(), security.getName());
   }
+
+  @Override
+  public String toString() {
+    return "Secretary{}";
+  }
 }
