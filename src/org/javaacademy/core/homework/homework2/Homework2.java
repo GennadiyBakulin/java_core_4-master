@@ -17,12 +17,13 @@ public class Homework2 {
     String[] words = {"Это", "шашлык", "на", "шампуре"};
     //С помощью циклов и функции String.substring составить итоговый текст
     //Это-шашлык-на-шампуре
-    String text = words[0];
+    String text = "";
 
-    for (int i = 1; i < words.length; i++) {
-      text = String.join("-", text, words[i].substring(0));
+    for (int i = 0; i < words.length; i++) {
+      text += "-" + words[i];
     }
 
+    text = text.substring(1);
     System.out.println(text);
   }
 

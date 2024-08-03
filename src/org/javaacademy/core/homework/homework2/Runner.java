@@ -13,7 +13,11 @@ public class Runner {
     Manager manager = new Manager("Володя");
     Security security = new Security("Петрович");
     Secretary secretary = new Secretary();
-    Office office = new Office(boss, manager, secretary, security);
+    Office office = new Office();
+    office.setBoss(boss);
+    office.setManager(manager);
+    office.setSecretary(secretary);
+    office.setSecurity(security);
     office.workingDay();
   }
 }

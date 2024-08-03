@@ -7,18 +7,43 @@ public class Office {
   private Secretary secretary;
   private Security security;
 
-  public Office(Boss boss, Manager manager, Secretary secretary, Security security) {
-    this.boss = boss;
-    this.manager = manager;
-    this.secretary = secretary;
-    this.security = security;
-  }
-
   public void workingDay() {
     boss.customizeManager(manager);
     manager.shout();
     security.askPayment();
     secretary.ask(boss, manager, security);
+  }
+
+  public Boss getBoss() {
+    return boss;
+  }
+
+  public void setBoss(Boss boss) {
+    this.boss = boss;
+  }
+
+  public Manager getManager() {
+    return manager;
+  }
+
+  public void setManager(Manager manager) {
+    this.manager = manager;
+  }
+
+  public Secretary getSecretary() {
+    return secretary;
+  }
+
+  public void setSecretary(Secretary secretary) {
+    this.secretary = secretary;
+  }
+
+  public Security getSecurity() {
+    return security;
+  }
+
+  public void setSecurity(Security security) {
+    this.security = security;
   }
 
   @Override
