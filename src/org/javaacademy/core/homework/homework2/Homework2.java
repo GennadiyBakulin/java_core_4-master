@@ -19,8 +19,8 @@ public class Homework2 {
     //Это-шашлык-на-шампуре
     String text = "";
 
-    for (int i = 0; i < words.length; i++) {
-      text += "-" + words[i];
+    for (String word : words) {
+      text += "-" + word;
     }
 
     text = text.substring(1);
@@ -106,12 +106,12 @@ public class Homework2 {
     //"перевернуть" - значит последние элементы становятся первыми и наоборот.
     int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-    for (int i = 0; i < numbers.length; i++) {
-      for (int j = 1; j < numbers.length - i; j++) {
-        int temp = numbers[j - 1];
-        numbers[j - 1] = numbers[j];
-        numbers[j] = temp;
-      }
+    int arrLength = numbers.length;
+
+    for (int i = 0; i < arrLength / 2; i++) {
+      int temp = numbers[i];
+      numbers[i] = numbers[arrLength - 1 - i];
+      numbers[arrLength - 1 - i] = temp;
     }
 
     System.out.println(Arrays.toString(numbers));
