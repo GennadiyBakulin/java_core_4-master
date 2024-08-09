@@ -1,6 +1,8 @@
 package org.javaacademy.core.homework.homework3;
 
 import org.javaacademy.core.homework.homework3.ex3.Pyramid1;
+import org.javaacademy.core.homework.homework3.ex4.City;
+import org.javaacademy.core.homework.homework3.ex4.House;
 
 public class Runner {
 
@@ -8,6 +10,7 @@ public class Runner {
     //В этом дз уже будет проверятся наличие корректных модификаторов доступа
     //у классов, атрибутов, методов
     ex3();
+    ex4();
   }
 
   public static void ex1() {
@@ -83,15 +86,19 @@ public class Runner {
     // эти изменения не затронут дом находящийся внутри города.
     // Т.е. результат должен соответствовать псевдокоду ниже:
     //
-    // City city = new City({new House('Lenina', 1)});
-    // System.out.println(city);
-    //-- City{House{street: Lenina, house: 1}}
-    //House house = city.getHouses()[0];
-    //house.setStreet('Kotova');
-    //System.out.println(house);
-    //-- House{street: Kotova, house: 1}
-    //System.out.println(city);
-    //-- City{House{street: Lenina, house: 1}}
-
+    House house1 = new House("Lenina", 1);
+    House house2 = new House("Popova", 15);
+    City city = new City("Moskau", house1, house2);
+    System.out.println(city);
+//    -- City{House{street: Lenina, house: 1}}
+    House house = city.getHouses()[0];
+    house.setStreet("Kotova");
+    System.out.println(house);
+//    -- House{street: Kotova, house: 1}
+    System.out.println(city);
+//    -- City{House{street: Lenina, house: 1}}
+    house1.setStreet("Kalinina");
+    System.out.println(house1);
+    System.out.println(city);
   }
 }
