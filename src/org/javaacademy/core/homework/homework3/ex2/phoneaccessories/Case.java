@@ -1,12 +1,12 @@
 package org.javaacademy.core.homework.homework3.ex2.phoneaccessories;
 
-public class PhoneCase {
+public class Case {
 
   private int width;
   private int height;
   private int length;
 
-  public PhoneCase(int width, int height, int length) {
+  public Case(int width, int height, int length) {
     this.width = width;
     this.height = height;
     this.length = length;

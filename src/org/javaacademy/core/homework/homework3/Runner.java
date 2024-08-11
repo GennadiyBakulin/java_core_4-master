@@ -48,15 +48,11 @@ public class Runner {
     //ВНИМАНИЕ! Фабрики создают телефоны без создания экземпляра фабрики!
 
     Iphone iphone = (Iphone) PhoneFactory.createPhone(TypePhone.IPHONE);
-    if (iphone != null) {
-      iphone.photographing();
-      iphone.printInfoOfProcessors();
-    }
+    iphone.photographing();
+    iphone.printInfoOfProcessors();
 
     Samsung samsung = (Samsung) PhoneFactory.createPhone(TypePhone.SAMSUNG);
-    if (samsung != null) {
-      samsung.photographing();
-    }
+    samsung.photographing();
   }
 
   public static void ex3() {

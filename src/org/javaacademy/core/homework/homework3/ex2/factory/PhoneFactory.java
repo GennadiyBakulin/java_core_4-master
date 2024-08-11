@@ -5,7 +5,7 @@ import org.javaacademy.core.homework.homework3.ex2.phone.Phone;
 import org.javaacademy.core.homework.homework3.ex2.phone.Samsung;
 import org.javaacademy.core.homework.homework3.ex2.phone.TypePhone;
 import org.javaacademy.core.homework.homework3.ex2.phoneaccessories.Camera;
-import org.javaacademy.core.homework.homework3.ex2.phoneaccessories.PhoneCase;
+import org.javaacademy.core.homework.homework3.ex2.phoneaccessories.Case;
 import org.javaacademy.core.homework.homework3.ex2.phoneaccessories.Processor;
 
 public class PhoneFactory {
@@ -15,7 +15,7 @@ public class PhoneFactory {
 
   public static Phone createPhone(TypePhone typePhone) {
 
-    switch (typePhone) {
+    return switch (typePhone) {
       case IPHONE -> {
         Iphone iphone = new Iphone();
         iphone.setProcessors(new Processor[]{
@@ -23,8 +23,8 @@ public class PhoneFactory {
             new Processor(1000)
         });
         iphone.setCamera(new Camera(8_000_000));
-        iphone.setPhoneCase(new PhoneCase(60, 200, 10));
-        return iphone;
+        iphone.setPhoneCase(new Case(60, 200, 10));
+        yield iphone;
       }
       case SAMSUNG -> {
         Samsung samsung = new Samsung();
@@ -32,13 +32,9 @@ public class PhoneFactory {
             new Processor(1500)
         });
         samsung.setCamera(new Camera(16_000_000));
-        samsung.setPhoneCase(new PhoneCase(60, 200, 15));
-        return samsung;
+        samsung.setPhoneCase(new Case(60, 200, 15));
+        yield samsung;
       }
-      default -> {
-        System.out.println("Данный вид телефона на фабрике не производится!");
-      }
-    }
-    return null;
+    };
   }
 }
