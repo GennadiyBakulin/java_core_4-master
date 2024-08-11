@@ -3,7 +3,6 @@ package org.javaacademy.core.homework.homework3.ex2.factory;
 import org.javaacademy.core.homework.homework3.ex2.phone.Iphone;
 import org.javaacademy.core.homework.homework3.ex2.phone.Phone;
 import org.javaacademy.core.homework.homework3.ex2.phone.Samsung;
-import org.javaacademy.core.homework.homework3.ex2.phone.TypePhone;
 import org.javaacademy.core.homework.homework3.ex2.phoneaccessories.Camera;
 import org.javaacademy.core.homework.homework3.ex2.phoneaccessories.Case;
 import org.javaacademy.core.homework.homework3.ex2.phoneaccessories.Processor;

@@ -3,7 +3,7 @@ package org.javaacademy.core.homework.homework3;
 import org.javaacademy.core.homework.homework3.ex2.factory.PhoneFactory;
 import org.javaacademy.core.homework.homework3.ex2.phone.Iphone;
 import org.javaacademy.core.homework.homework3.ex2.phone.Samsung;
-import org.javaacademy.core.homework.homework3.ex2.phone.TypePhone;
+import org.javaacademy.core.homework.homework3.ex2.factory.TypePhone;
 import org.javaacademy.core.homework.homework3.ex3.Pyramid1;
 import org.javaacademy.core.homework.homework3.ex4.City;
 import org.javaacademy.core.homework.homework3.ex4.House;
