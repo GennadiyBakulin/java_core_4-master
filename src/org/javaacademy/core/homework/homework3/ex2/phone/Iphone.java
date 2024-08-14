@@ -7,11 +7,6 @@ import org.javaacademy.core.homework.homework3.ex2.phoneaccessories.Processor;
 
 public class Iphone extends Phone {
 
-  @Override
-  public void photographing() {
-    super.photographing();
-  }
-
   public void printInfoOfProcessors() {
     System.out.println("Processors: {" + Arrays.toString(processors) + "}");
   }

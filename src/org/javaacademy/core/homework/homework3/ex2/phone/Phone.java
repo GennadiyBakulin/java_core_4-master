@@ -4,13 +4,13 @@ import org.javaacademy.core.homework.homework3.ex2.phoneaccessories.Camera;
 import org.javaacademy.core.homework.homework3.ex2.phoneaccessories.Case;
 import org.javaacademy.core.homework.homework3.ex2.phoneaccessories.Processor;
 
-public class Phone {
+public abstract class Phone {
 
   protected Processor[] processors;
   protected Camera camera;
   protected Case phoneCase;
 
-  protected void photographing() {
+  public void photographing() {
     camera.photographing();
   }
 }

@@ -6,11 +6,6 @@ import org.javaacademy.core.homework.homework3.ex2.phoneaccessories.Processor;
 
 public class Samsung extends Phone {
 
-  @Override
-  public void photographing() {
-    super.photographing();
-  }
-
   public Processor[] getProcessors() {
     return processors;
   }
