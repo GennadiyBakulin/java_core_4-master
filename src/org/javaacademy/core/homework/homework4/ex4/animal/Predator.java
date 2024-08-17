@@ -1,6 +1,6 @@
 package org.javaacademy.core.homework.homework4.ex4.animal;
 
-public class Predator extends Alive {
+public abstract class Predator extends Alive {
 
   public Predator(double weight) {
     super(weight);
