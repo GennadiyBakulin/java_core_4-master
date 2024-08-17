@@ -1,5 +1,8 @@
 package org.javaacademy.core.homework.homework4;
 
+import org.javaacademy.core.homework.homework4.ex2.Duck;
+import org.javaacademy.core.homework.homework4.ex2.FlyException;
+import org.javaacademy.core.homework.homework4.ex2.Plane;
 import org.javaacademy.core.homework.homework4.ex3.Bird;
 import org.javaacademy.core.homework.homework4.ex3.Builder;
 import org.javaacademy.core.homework.homework4.ex3.Driver;
@@ -9,7 +12,8 @@ import org.javaacademy.core.homework.homework4.ex3.MakingSound;
 public class Runner {
 
   public static void main(String[] args) {
-    ex3();
+    ex2();
+//    ex3();
   }
 
   public static void ex1() {
@@ -49,6 +53,39 @@ public class Runner {
     // Ошибка: утка ранена
     // самолет летит
     // Ошибка: пассажиров в самолете меньше 0
+
+    Duck duck = new Duck();
+    duck.setInjured(false);
+    Duck duckInjured = new Duck();
+    duckInjured.setInjured(true);
+    Plane plane = new Plane();
+    plane.setCountPassengers(10);
+    Plane planeError = new Plane();
+    planeError.setCountPassengers(-1);
+
+    try {
+      duck.fly();
+    } catch (FlyException e) {
+      System.out.println(e.getMessage());
+    }
+
+    try {
+      duckInjured.fly();
+    } catch (FlyException e) {
+      System.out.println(e.getMessage());
+    }
+
+    try {
+      plane.fly();
+    } catch (FlyException e) {
+      System.out.println(e.getMessage());
+    }
+
+    try {
+      planeError.fly();
+    } catch (FlyException e) {
+      System.out.println(e.getMessage());
+    }
   }
 
   public static void ex3() {
