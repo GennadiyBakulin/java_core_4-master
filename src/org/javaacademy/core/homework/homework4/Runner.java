@@ -1,5 +1,9 @@
 package org.javaacademy.core.homework.homework4;
 
+import org.javaacademy.core.homework.homework4.ex1.Bus;
+import org.javaacademy.core.homework.homework4.ex1.Car;
+import org.javaacademy.core.homework.homework4.ex1.CarWash;
+import org.javaacademy.core.homework.homework4.ex1.PassengerCar;
 import org.javaacademy.core.homework.homework4.ex2.Duck;
 import org.javaacademy.core.homework.homework4.ex2.FlyException;
 import org.javaacademy.core.homework.homework4.ex2.Plane;
@@ -12,8 +16,9 @@ import org.javaacademy.core.homework.homework4.ex3.MakingSound;
 public class Runner {
 
   public static void main(String[] args) {
+    ex1();
     ex2();
-//    ex3();
+    ex3();
   }
 
   public static void ex1() {
@@ -30,6 +35,21 @@ public class Runner {
     //В автомойку были отправлены грязные машины мэрии: 4 легковых(длина высота ширина) (5х2х1.8),
     //5 автобусов(12х3х2.3)
     //Посчитать и вывести: сколько мэрия заплатит денег за мойку всех машин.
+
+    Car[] cars = new Car[]{
+        new PassengerCar(1.8, 2, 5),
+        new PassengerCar(1.8, 2, 5),
+        new PassengerCar(1.8, 2, 5),
+        new PassengerCar(1.8, 2, 5),
+        new Bus(2.3, 3, 12),
+        new Bus(2.3, 3, 12),
+        new Bus(2.3, 3, 12),
+        new Bus(2.3, 3, 12),
+        new Bus(2.3, 3, 12)
+    };
+
+    CarWash carWash = new CarWash();
+    System.out.println("За все машины мэрия заплатит: " + carWash.washingCars(cars));
   }
 
   public static void ex2() {
