@@ -5,20 +5,20 @@ package org.javaacademy.core.homework.homework3.shop;
  */
 public class Customer {
 
-  private String name;
+    private final String name;
 
-  public Customer(String name) {
-    this.name = name;
-  }
-
-  void checkShop(Shop shop) {
-    //ПОМЕНЯТЬ ЗДЕСЬ ВЫРАЖЕНИЕ
-    if (shop.isClearFloor() && shop.getCountWorkers() > 2
-        || shop.isClearFloor() && shop.isWorkersHasBadge()
-        || shop.getCountWorkers() > 2 && shop.isWorkersHasBadge()) {
-      System.out.println(name + ": Магазин прошел проверку");
-    } else {
-      System.out.println(name + ": Магазин не прошел проверку!");
+    public Customer(String name) {
+        this.name = name;
     }
-  }
+
+    void checkShop(Shop shop) {
+        //ПОМЕНЯТЬ ЗДЕСЬ ВЫРАЖЕНИЕ
+        if (shop.isClearFloor() && shop.getCountWorkers() > 2
+                || shop.isClearFloor() && shop.isWorkersHasBadge()
+                || shop.getCountWorkers() > 2 && shop.isWorkersHasBadge()) {
+            System.out.println(name + ": Магазин прошел проверку");
+        } else {
+            System.out.println(name + ": Магазин не прошел проверку!");
+        }
+    }
 }

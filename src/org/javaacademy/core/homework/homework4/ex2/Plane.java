@@ -2,17 +2,17 @@ package org.javaacademy.core.homework.homework4.ex2;
 
 public class Plane implements Fly {
 
-  private int countPassengers;
+    private int countPassengers;
 
-  public void setCountPassengers(int countPassengers) {
-    this.countPassengers = countPassengers;
-  }
-
-  @Override
-  public void fly() throws FlyException {
-    if (countPassengers < 0) {
-      throw new FlyException("пассажиров в самолете меньше 0");
+    public void setCountPassengers(int countPassengers) {
+        this.countPassengers = countPassengers;
     }
-    System.out.println("самолет летит");
-  }
+
+    @Override
+    public void fly() throws FlyException {
+        if (countPassengers < 0) {
+            throw new FlyException("пассажиров в самолете меньше 0");
+        }
+        System.out.println("самолет летит");
+    }
 }

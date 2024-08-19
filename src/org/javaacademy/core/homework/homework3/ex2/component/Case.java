@@ -2,37 +2,37 @@ package org.javaacademy.core.homework.homework3.ex2.component;
 
 public class Case {
 
-  private int width;
-  private int height;
-  private int length;
+    private int width;
+    private int height;
+    private int length;
 
-  public Case(int width, int height, int length) {
-    this.width = width;
-    this.height = height;
-    this.length = length;
-  }
+    public Case(int width, int height, int length) {
+        this.width = width;
+        this.height = height;
+        this.length = length;
+    }
 
-  public int getWidth() {
-    return width;
-  }
+    public int getWidth() {
+        return width;
+    }
 
-  public void setWidth(int width) {
-    this.width = width;
-  }
+    public void setWidth(int width) {
+        this.width = width;
+    }
 
-  public int getHeight() {
-    return height;
-  }
+    public int getHeight() {
+        return height;
+    }
 
-  public void setHeight(int height) {
-    this.height = height;
-  }
+    public void setHeight(int height) {
+        this.height = height;
+    }
 
-  public int getLength() {
-    return length;
-  }
+    public int getLength() {
+        return length;
+    }
 
-  public void setLength(int length) {
-    this.length = length;
-  }
+    public void setLength(int length) {
+        this.length = length;
+    }
 }

@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Iphone extends Phone {
 
-  public void printInfoOfProcessors() {
-    System.out.println("Processors: {" + Arrays.toString(this.getProcessors()) + "}");
-  }
+    public void printInfoOfProcessors() {
+        System.out.println("Processors: {" + Arrays.toString(this.getProcessors()) + "}");
+    }
 }
