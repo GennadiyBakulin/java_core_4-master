@@ -4,6 +4,10 @@ public class Plane implements Fly {
 
     private int countPassengers;
 
+    public Plane(int countPassengers) {
+        this.countPassengers = countPassengers;
+    }
+
     public void setCountPassengers(int countPassengers) {
         this.countPassengers = countPassengers;
     }

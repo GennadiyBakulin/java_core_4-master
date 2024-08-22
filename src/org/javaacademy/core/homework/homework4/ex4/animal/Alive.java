@@ -5,7 +5,7 @@ public abstract class Alive {
     private boolean isAlive;
     private double weight;
 
-    public Alive(double weight) {
+    protected Alive(double weight) {
         this.weight = weight;
         isAlive = true;
     }

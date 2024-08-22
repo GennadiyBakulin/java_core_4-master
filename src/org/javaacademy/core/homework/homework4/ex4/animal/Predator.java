@@ -2,7 +2,7 @@ package org.javaacademy.core.homework.homework4.ex4.animal;
 
 public abstract class Predator extends Alive {
 
-    public Predator(double weight) {
+    protected Predator(double weight) {
         super(weight);
     }
 
@@ -13,7 +13,7 @@ public abstract class Predator extends Alive {
         if (this.getWeight() < alive.getWeight()) {
             this.die();
         } else {
-            setWeight(this.getWeight() + alive.getWeight() / 3);
+            this.setWeight(this.getWeight() + alive.getWeight() / 3);
             alive.die();
         }
     }

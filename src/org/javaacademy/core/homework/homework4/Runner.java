@@ -36,7 +36,8 @@ public class Runner {
         //5 автобусов(12х3х2.3)
         //Посчитать и вывести: сколько мэрия заплатит денег за мойку всех машин.
 
-        Car[] cars = new Car[]{new PassengerCar(1.8, 2, 5),
+        Car[] cars = new Car[]{
+            new PassengerCar(1.8, 2, 5),
             new PassengerCar(1.8, 2, 5),
             new PassengerCar(1.8, 2, 5),
             new PassengerCar(1.8, 2, 5),
@@ -77,10 +78,8 @@ public class Runner {
         duck.setInjured(false);
         Duck duckInjured = new Duck();
         duckInjured.setInjured(true);
-        Plane plane = new Plane();
-        plane.setCountPassengers(10);
-        Plane planeError = new Plane();
-        planeError.setCountPassengers(-1);
+        Plane plane = new Plane(10);
+        Plane planeError = new Plane(-1);
 
         try {
             duck.fly();
@@ -124,8 +123,8 @@ public class Runner {
 
         MakingSound[] makingSounds = new MakingSound[]{human, builder, driver, bird};
 
-        for (MakingSound makingSound : makingSounds) {
-            makingSound.makingSound();
+        for (MakingSound elem : makingSounds) {
+            elem.makingSound();
         }
     }
 

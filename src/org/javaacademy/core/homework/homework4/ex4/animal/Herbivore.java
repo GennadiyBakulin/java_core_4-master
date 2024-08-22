@@ -2,7 +2,7 @@ package org.javaacademy.core.homework.homework4.ex4.animal;
 
 public abstract class Herbivore extends Alive {
 
-    public Herbivore(double weight) {
+    protected Herbivore(double weight) {
         super(weight);
     }
 
