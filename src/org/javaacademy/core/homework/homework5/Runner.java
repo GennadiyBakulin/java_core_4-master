@@ -52,6 +52,8 @@ public class Runner {
             System.out.printf("%s\t- %.2f\n", countries[i], amountsOfDonat[i]);
         }
 
+        scanner.close();
+
         //Ожидаемый вывод:
         //Список пожертвований по странам (пример):
         //Россия - 14233.00
@@ -59,8 +61,6 @@ public class Runner {
         //Китай - 20000.11
         //Япония - 124.10
         //Турция - 777.55
-
-        scanner.close();
     }
 
     private static void ex2() {
