@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class ComputerSpy extends Computer {
     private final static String PATH_TO_FILE = "logs\\comp.log";
-    Computer computer;
+    private final Computer computer;
 
     public ComputerSpy(Computer computer) {
         this.computer = computer;
