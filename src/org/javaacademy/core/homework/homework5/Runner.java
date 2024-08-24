@@ -1,11 +1,13 @@
 package org.javaacademy.core.homework.homework5;
 
 import java.io.FileNotFoundException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Scanner;
 
 public class Runner {
     public static void main(String[] args) throws FileNotFoundException {
-
+        ex1();
     }
 
     private static void ex1() {
@@ -18,7 +20,37 @@ public class Runner {
         String filename = "donation.csv";
         //Чтение файла из папки resources (без привязки к конкретному расположению проекта)
         Scanner scanner = new Scanner(Runner.class.getClassLoader().getResourceAsStream(filename));
-        System.out.println(scanner.nextLine());
+        final String[] head = scanner.nextLine().split(";");
+
+        BigDecimal amountDonat;
+        BigDecimal[] amountsOfDonat = new BigDecimal[countries.length];
+
+        for (int i = 0; i < amountsOfDonat.length; i++) {
+            amountsOfDonat[i] = BigDecimal.valueOf(0.0).setScale(2, RoundingMode.HALF_EVEN);
+        }
+
+        while (scanner.hasNext()) {
+            String[] line = scanner.nextLine().split(";");
+
+            try {
+                amountDonat = BigDecimal.valueOf(Double.parseDouble(line[1].replace(",", ".")));
+            } catch (NumberFormatException e) {
+                continue;
+            }
+
+            for (int i = 0; i < countries.length; i++) {
+                if (line[0].equals(countries[i])) {
+                    amountsOfDonat[i] = amountsOfDonat[i].add(amountDonat);
+                    break;
+                }
+            }
+        }
+
+        System.out.println("Список пожертвований по странам:");
+        System.out.printf("%s\t %s\n", head[0], head[1]);
+        for (int i = 0; i < countries.length; i++) {
+            System.out.printf("%s\t- %.2f\n", countries[i], amountsOfDonat[i]);
+        }
 
         //Ожидаемый вывод:
         //Список пожертвований по странам (пример):
@@ -27,6 +59,8 @@ public class Runner {
         //Китай - 20000.11
         //Япония - 124.10
         //Турция - 777.55
+
+        scanner.close();
     }
 
     private static void ex2() {
