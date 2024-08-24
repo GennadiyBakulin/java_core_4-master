@@ -18,24 +18,14 @@ public class ComputerSpy extends Computer {
     @Override
     public void inputUser(User user) {
         String log = String.format("Пользователь %s вошел\n", user.getName());
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(PATH_TO_FILE, true))) {
-            bw.write(log);
-            bw.flush();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        writeToFile(log);
         this.computer.inputUser(user);
     }
 
     @Override
     public void outputUser() {
         String log = "Пользователь вышел\n";
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(PATH_TO_FILE, true))) {
-            bw.write(log);
-            bw.flush();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        writeToFile(log);
         this.computer.outputUser();
     }
 
@@ -44,12 +34,16 @@ public class ComputerSpy extends Computer {
         String log = String.format("Пользователь %s отправил сообщение %s\n",
                 computer.getUser().getName(),
                 message);
+        writeToFile(log);
+        this.computer.sendMessage(message);
+    }
+
+    private void writeToFile(String log) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(PATH_TO_FILE, true))) {
             bw.write(log);
             bw.flush();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        this.computer.sendMessage(message);
     }
 }
