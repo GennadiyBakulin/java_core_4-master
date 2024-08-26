@@ -32,8 +32,7 @@ public class ComputerSpy extends Computer {
     @Override
     public void sendMessage(String message) {
         String log = String.format("Пользователь %s отправил сообщение %s\n",
-                computer.getUser().getName(),
-                message);
+                computer.getUser().getName(), message);
         writeToFile(log);
         this.computer.sendMessage(message);
     }
@@ -41,7 +40,6 @@ public class ComputerSpy extends Computer {
     private void writeToFile(String log) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(PATH_TO_FILE, true))) {
             bw.write(log);
-            bw.flush();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
