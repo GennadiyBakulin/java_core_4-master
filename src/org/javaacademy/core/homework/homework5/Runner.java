@@ -2,7 +2,6 @@ package org.javaacademy.core.homework.homework5;
 
 import java.io.FileNotFoundException;
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.Scanner;
 
 public class Runner {
@@ -26,14 +25,14 @@ public class Runner {
         BigDecimal[] amountsOfDonat = new BigDecimal[countries.length];
 
         for (int i = 0; i < amountsOfDonat.length; i++) {
-            amountsOfDonat[i] = BigDecimal.valueOf(0.0).setScale(2, RoundingMode.HALF_EVEN);
+            amountsOfDonat[i] = BigDecimal.valueOf(0.0);
         }
 
         while (scanner.hasNext()) {
             String[] line = scanner.nextLine().split(";");
 
             try {
-                amountDonat = BigDecimal.valueOf(Double.parseDouble(line[1].replace(",", ".")));
+                amountDonat = new BigDecimal(line[1].replace(",", "."));
             } catch (NumberFormatException e) {
                 continue;
             }
